@@ -2,6 +2,7 @@
 require_once 'pdo.php';
 
 $message = [];
+// Регистрация
 if(isset($_POST['regist']))
 {
 
@@ -73,18 +74,13 @@ if(isset($_POST['regist']))
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
     <title>Вход на сайт</title>
-    
-  </head>
+   </head>
   <body> 
-   
     <section>
     <div class="container">
-        
+        <div class="col-sm-4 col-sm-offset-4 padding-right">
 
-            <div class="col-sm-4 col-sm-offset-4 padding-right">
-
-              
-                    <h2>Регистрация</h2>
+              <h2>Регистрация</h2>
                     <form  method="post">
                         <input type="text" name="login" placeholder="логин" value="<?= @$login; ?>"/>
                         <input type="password" name="password" placeholder="Пароль" value=""/>
@@ -106,12 +102,8 @@ if(isset($_POST['regist']))
 			
 				 ?>
 				
-				
-				
-				 <br/>
-            </div>
-       
-    </div>
+	    </div>
+       </div>
 </section>
  </body>
 </html>
