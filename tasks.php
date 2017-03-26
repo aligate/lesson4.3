@@ -10,7 +10,7 @@ $array_user = [];
 
 if(strpos($_SERVER['REQUEST_URI'], '?') === false){
 	
-if($_POST['save'])
+if( isset( $_POST['save'] ))
 	
 	{
 		// Добавление нового задания
@@ -25,7 +25,7 @@ if($_POST['save'])
 	
 		
 	} 
-	elseif($_POST['assign'])
+	elseif(isset($_POST['assign']))
 	{
 		// Закрепление задания за другим пользоватлем
 		$user_id = $_POST['assigned_user_id'];
@@ -36,7 +36,7 @@ if($_POST['save'])
 		
 		
 	}
-	elseif($_POST['change'])
+	elseif(isset($_POST['change']))
 	{
 		//Редактирование задания
 		$desc = trim(addslashes($_POST['description']));
@@ -51,7 +51,7 @@ if($_POST['save'])
 		$stmt->execute();
 		header('Location:'.$_SERVER['PHP_SELF']);
 	}
-	elseif($_POST['sort'])
+	elseif(isset($_POST['sort']))
 	{
 		// Сортировка заданий по заданным полям
 		$data = $_POST['sort_by'];
@@ -67,7 +67,7 @@ if($_POST['save'])
 	{
 		// Вывод заданий по умолчанию
 		// закрепленные задания
-		$query1 = "SELECT ts.id AS task_id, 
+				$query1 = "SELECT ts.id AS task_id, 
 							ts.description, 
 							ts.date_added,
 							ts.is_done,
@@ -77,7 +77,7 @@ if($_POST['save'])
 		$array_assigned = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
 		// Созданные задания
-		$query2 = "SELECT ts.id AS task_id, 
+				$query2 = "SELECT ts.id AS task_id, 
 							ts.description, 
 							ts.user_id,
 							ts.assigned_user_id,
