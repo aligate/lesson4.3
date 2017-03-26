@@ -70,8 +70,7 @@
 	 <td><?= $login_in_session; ?></td>
   <td><?= $item['login'];?></td>
   <td><form method='POST'>
-  
-	<input type="hidden" name="task_id" value="<?=$item['task_id'];?>">
+  <input type="hidden" name="task_id" value="<?=$item['task_id'];?>">
 	
   <select name='assigned_user_id'>
   <?php foreach($array_user as $key=>$value): ?>
@@ -88,7 +87,6 @@
 	<?php endforeach; ?>
 </table>
 <p><strong>Список заданий, выполнение которых от Вас ожидают другие люди:</strong></p>
-
 
 <table>
         <tr>
