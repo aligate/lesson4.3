@@ -49,7 +49,7 @@ if(isset($_POST['regist']))
 	}
 	if($pass==='') 
 	{
-		$message['error'][] = "<p style='color: red'; >Введите ваш ваш пароль</p>";
+		$message['error'][] = "<p style='color: red'; >Введите ваш пароль</p>";
 	}
 
 	$stmt = $pdo->prepare("SELECT * FROM user WHERE login = :login AND password = :password");
@@ -88,7 +88,7 @@ if(isset($_POST['regist']))
 					</form>
 						<h3>Или авторизируйтесь</h3>
 					<form  method="post">
-						<input type="text" name="login" placeholder="введите ваш логин" value=""/>
+						<input type="text" name="login" placeholder="введите ваш логин" value="<?= @$log; ?>"/>
 						 <input type="password" name="password" placeholder="Пароль" value=""/>
 						<input type="submit" name="auth" value="Вход" />
 					
