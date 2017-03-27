@@ -1,6 +1,6 @@
 <?php
 require_once 'pdo.php';
-
+if(!$_SESSION['users']) header('Location: login.php');
 $id_in_session = $_SESSION['users']['id'];
 $login_in_session = $_SESSION['users']['login'];
 
