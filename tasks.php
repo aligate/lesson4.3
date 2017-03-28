@@ -100,8 +100,9 @@ if( isset( $_POST['save'] ))
 		
 	}
 	
-}	
-	else {	
+}
+// действия с GET
+else {	
 	$action = trim(addslashes($_GET['action']));
 	$id = trim(addslashes($_GET['id']));
 	
