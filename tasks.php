@@ -8,7 +8,7 @@ $array =[];
 $array_assigned =[];
 $array_user = []; 
 
-if(strpos($_SERVER['REQUEST_URI'], '?') === false){
+if(empty( $_GET )) {
 	
 if( isset( $_POST['save'] ))
 	
